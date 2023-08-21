@@ -6,7 +6,7 @@ import ru.practicum.server.model.EndpointHit;
 
 @UtilityClass
 public class EndpointHitMapper {
-    public EndpointHit toObject(EndpointHitDto endpointHitDto) {
+    public static EndpointHit toObject(EndpointHitDto endpointHitDto) {
         return EndpointHit.builder()
                 .id(endpointHitDto.getId())
                 .app(endpointHitDto.getApp())
@@ -15,7 +15,7 @@ public class EndpointHitMapper {
                 .createdDate(endpointHitDto.getTimestamp()).build();
     }
 
-    public EndpointHitDto toDto(EndpointHit endpointHit) {
+    public static EndpointHitDto toDto(EndpointHit endpointHit) {
         return EndpointHitDto.builder()
                 .id(endpointHit.getId())
                 .app(endpointHit.getApp())
