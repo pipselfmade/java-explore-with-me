@@ -9,21 +9,21 @@ import java.util.stream.Collectors;
 
 @UtilityClass
 public class ViewStatsMapper {
-    public ViewStats toObject(ViewStatsDto viewStatsDto) {
+    public static ViewStats toObject(ViewStatsDto viewStatsDto) {
         return ViewStats.builder()
                 .app(viewStatsDto.getApp())
                 .uri(viewStatsDto.getUri())
                 .hits(viewStatsDto.getHits()).build();
     }
 
-    public ViewStatsDto toDto(ViewStats viewStats) {
+    public static ViewStatsDto toDto(ViewStats viewStats) {
         return ViewStatsDto.builder()
                 .app(viewStats.getApp())
                 .uri(viewStats.getUri())
                 .hits(viewStats.getHits()).build();
     }
 
-    public List<ViewStatsDto> toViewStatsDto(List<ViewStats> viewStats) {
+    public static List<ViewStatsDto> toViewStatsDto(List<ViewStats> viewStats) {
         return viewStats.stream().map(ViewStatsMapper::toDto).collect(Collectors.toList());
     }
 }
