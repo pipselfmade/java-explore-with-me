@@ -8,6 +8,7 @@ import ru.practicum.dto.EndpointHitDto;
 import ru.practicum.dto.ViewStatsDto;
 import ru.practicum.server.service.StatService;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -31,8 +32,8 @@ public class StatController {
     }
 
     @GetMapping("/stats")
-    public List<ViewStatsDto> getStats(@RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime start,
-                                       @RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime end,
+    public List<ViewStatsDto> getStats(@NotEmpty @RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime start,
+                                       @NotEmpty @RequestParam @DateTimeFormat(pattern = DATE_FORMAT) LocalDateTime end,
                                        @RequestParam(required = false) List<String> uris,
                                        @RequestParam(defaultValue = "false") Boolean unique) {
         log.info("New GET /stats request");
