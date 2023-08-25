@@ -24,7 +24,6 @@ public class StatServiceImpl implements StatService {
     private final StatRepository statRepository;
 
     @Override
-    @Transactional
     public void saveStat(EndpointHitDto endpointHitDto) {
         log.debug("EndpointHit with id {} saved", endpointHitDto.getId());
         statRepository.save(toObject(endpointHitDto));

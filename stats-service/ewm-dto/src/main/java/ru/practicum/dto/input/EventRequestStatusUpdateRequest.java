@@ -1,9 +1,6 @@
 package ru.practicum.dto.input;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ru.practicum.dto.enums.RequestStatus;
 
 import java.util.List;

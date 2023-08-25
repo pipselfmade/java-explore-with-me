@@ -21,7 +21,7 @@ public class EndpointHitDto {
     private String app;
 
     @NotEmpty(message = "Uri is empty")
-    private String uri;
+     private String uri;
 
     @NotEmpty(message = "IP is empty")
     private String ip;
