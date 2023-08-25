@@ -23,6 +23,7 @@ import static ru.practicum.server.mapper.ViewStatsMapper.toViewStatsDto;
 public class StatServiceImpl implements StatService {
     private final StatRepository statRepository;
 
+    @Transactional(readOnly = true)
     @Override
     public void saveStat(EndpointHitDto endpointHitDto) {
         log.debug("EndpointHit with id {} saved", endpointHitDto.getId());
