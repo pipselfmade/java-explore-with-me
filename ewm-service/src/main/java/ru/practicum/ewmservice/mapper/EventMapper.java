@@ -1,6 +1,5 @@
 package ru.practicum.ewmservice.mapper;
 
-import lombok.experimental.UtilityClass;
 import ru.practicum.dto.event.EventFullDto;
 import ru.practicum.dto.event.EventShortDto;
 import ru.practicum.dto.input.NewEventDto;
@@ -10,11 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@UtilityClass
 public class EventMapper {
     public static Event toModel(NewEventDto newEventDto) {
         return Event.builder()
+                .id(null)
                 .annotation(newEventDto.getAnnotation())
+                .confirmedRequests(null)
                 .description(newEventDto.getDescription())
                 .eventDate(newEventDto.getEventDate())
                 .location(newEventDto.getLocation())

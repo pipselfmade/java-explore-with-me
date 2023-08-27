@@ -1,6 +1,5 @@
 package ru.practicum.ewmservice.mapper;
 
-import lombok.experimental.UtilityClass;
 import ru.practicum.dto.compilation.CompilationDto;
 import ru.practicum.dto.input.NewCompilationDto;
 import ru.practicum.dto.input.UpdateCompilationDto;
@@ -8,7 +7,6 @@ import ru.practicum.ewmservice.model.Compilation;
 
 import static ru.practicum.ewmservice.mapper.EventMapper.toShortDtoList;
 
-@UtilityClass
 public class CompilationMapper {
     public static CompilationDto toDto(Compilation compilation) {
         return CompilationDto.builder()
