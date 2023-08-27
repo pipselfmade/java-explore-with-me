@@ -36,6 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public void delete(Long catId) {
         log.info("Task delete category by id={}", catId);
         isCategoryExistById(catId);
@@ -44,6 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public CategoryDto update(Long catId, NewCategoryDto categoryDto) {
         log.info("Task update category. Category id='{}', update='{}'", catId, categoryDto);
         final Category oldCategory = categoryRepository.findById(catId).orElseThrow(() ->
