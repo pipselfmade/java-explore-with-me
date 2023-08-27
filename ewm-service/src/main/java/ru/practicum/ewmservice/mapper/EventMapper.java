@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class EventMapper {
     public static Event toModel(NewEventDto newEventDto) {
         return Event.builder()
-                .id(null)
+                //.id(null)
                 .annotation(newEventDto.getAnnotation())
                 .confirmedRequests(null)
                 .description(newEventDto.getDescription())
