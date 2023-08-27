@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.dto.category.CategoryDto;
 import ru.practicum.dto.input.NewCategoryDto;
 import ru.practicum.ewmservice.exception.NotFoundException;
@@ -23,6 +24,7 @@ public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
 
     @Override
+    @Transactional
     public CategoryDto create(NewCategoryDto categoryDto) {
         log.info("Task created new category {}", categoryDto);
         isNameCategoryExist(categoryDto.getName());
@@ -34,6 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public void delete(Long catId) {
         log.info("Task delete category by id={}", catId);
         isCategoryExistById(catId);
@@ -42,6 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public CategoryDto update(Long catId, NewCategoryDto categoryDto) {
         log.info("Task update category. Category id='{}', update='{}'", catId, categoryDto);
         final Category oldCategory = categoryRepository.findById(catId).orElseThrow(() ->
