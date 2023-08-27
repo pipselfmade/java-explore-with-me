@@ -18,7 +18,9 @@ public class RequestMapper {
     public static Request toModel(ParticipationRequestDto participationRequestDto) {
         return Request.builder()
                 .id(participationRequestDto.getId())
+                .event(null)
                 .created(participationRequestDto.getCreated())
+                .requester(null)
                 .status(participationRequestDto.getStatus()).build();
     }
 }
