@@ -6,21 +6,20 @@ import ru.practicum.dto.enums.RequestStatus;
 
 import java.time.LocalDateTime;
 
-@Value
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
+@NoArgsConstructor
 @Builder
 public class ParticipationRequestDto {
-    Long id;
+    private Long id;
 
-    Long event;
+    private Long event;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    LocalDateTime created;
+    private LocalDateTime created;
 
-    Long requester;
+    private Long requester;
 
-    RequestStatus status;
+    private RequestStatus status;
 }
