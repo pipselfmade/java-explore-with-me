@@ -10,11 +10,10 @@ import ru.practicum.dto.user.UserShortDto;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-@Value
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor(force = true)
+@NoArgsConstructor
 @Builder
 public class EventFullDto {
     private Long id;
@@ -28,7 +27,7 @@ public class EventFullDto {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull
     private LocalDateTime createdOn;
-    String description;
+    private String description;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
