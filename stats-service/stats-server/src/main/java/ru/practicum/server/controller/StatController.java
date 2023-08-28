@@ -3,11 +3,13 @@ package ru.practicum.server.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.practicum.dto.EndpointHitDto;
-import ru.practicum.dto.ViewStatsDto;
+import ru.practicum.dto.statistics.EndpointHitDto;
+import ru.practicum.dto.statistics.ViewStatsDto;
 import ru.practicum.server.service.StatService;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,7 +22,8 @@ public class StatController {
     private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @PostMapping("/hit")
-    public void saveStat(@RequestBody EndpointHitDto endpointHitDto) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public void saveStat(@Valid @RequestBody EndpointHitDto endpointHitDto) {
         log.info("New POST /hit request");
         statService.saveStat(endpointHitDto);
     }

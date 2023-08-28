@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.dto.EndpointHitDto;
-import ru.practicum.dto.ViewStatsDto;
+import ru.practicum.dto.statistics.EndpointHitDto;
+import ru.practicum.dto.statistics.ViewStatsDto;
 import ru.practicum.server.mapper.EndpointHitMapper;
 import ru.practicum.server.repository.StatRepository;
 
@@ -24,7 +24,6 @@ public class StatServiceImpl implements StatService {
     private final StatRepository statRepository;
 
     @Override
-    @Transactional
     public void saveStat(EndpointHitDto endpointHitDto) {
         log.debug("EndpointHit with id {} saved", endpointHitDto.getId());
         statRepository.save(toObject(endpointHitDto));
