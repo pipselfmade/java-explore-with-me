@@ -854,7 +854,7 @@
       "name": "Admin",
       "item": [
         {
-          "name": "Добавление коммента",
+          "name": "Добавление комментария",
           "event": [
             {
               "listen": "test",
@@ -1160,7 +1160,7 @@
                   "pm.test(\"Тест Создание комментария\", function () {",
                   "    var jsonData = pm.response.json();",
                   "    pm.expect(jsonData).to.have.property('text');",
-                  "    pm.expect(jsonData.text, '\"text\" должен быть \"Первый! ... комм!\"').to.eql('Первый! ... комм!');",
+                  "    pm.expect(jsonData.text, '\"text\" должен быть \"Первый! ... комментарий!\"').to.eql('Первый! ... комментарий!');",
                   "});",
                   "",
                   "",
