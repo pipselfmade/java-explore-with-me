@@ -1025,7 +1025,7 @@
           "response": []
         },
         {
-          "name": "Поиск по содержанию комментариев",
+          "name": "Поиск по содержанию комментария",
           "event": [
             {
               "listen": "test",
@@ -1065,7 +1065,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/admin/comments/?from=0&size=100&text=неХор",
+              "raw": "{{baseUrl}}/admin/comments/?from=0&size=100&text=Плох",
               "host": [
                 "{{baseUrl}}"
               ],
