@@ -7,10 +7,10 @@
   },
   "item": [
     {
-      "name": "Comment",
+      "name": "Private",
       "item": [
         {
-          "name": "Добавление комментариев",
+          "name": "Добавление комментария",
           "event": [
             {
               "listen": "test",
