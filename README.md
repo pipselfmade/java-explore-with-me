@@ -1,3 +1,5 @@
 # java-explore-with-me
 Template repository for ExploreWithMe project.
-ссылка на pull requests https://github.com/pipselfmade/java-explore-with-me/pull/6#issue-1872119519
+Вы уже спроектировали полноценное приложение — и бóльшая часть дипломной работы позади. Поздравляем!
+Осталось последнее задание — реализация выбранной вами дополнительной функциональности. На этом этапе вам предстоит, во-первых, реализовать саму функциональность, а также написать базовые Postman-тесты, которые будут проверять её работоспособность.
+Cсылка на pull requests https://github.com/pipselfmade/java-explore-with-me/pull/6#issue-1872119519
